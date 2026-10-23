@@ -1,0 +1,64 @@
+# NeFTY: neural diffusivity field + implicit-Euler solver + adjoint gradients
+# Synthetic benchmark configuration (one specimen per run; pick it with --eval_idx).
+
+# Experiment
+expname = nefty
+basedir = ./logs
+datadir = ./data/synthetic_1000
+
+# Neural field: MLP depth/width, positional-encoding bandwidth, annealing horizon
+netdepth = 10
+netwidth = 512
+netchunk = 2147483640
+multires = 12
+i_embed = 0
+anneal_iters = 2500
+use_fa = True
+mlp_activation = relu
+output_activation = sigmoid
+
+# Optimization (Adam; lr decays by 0.1 every lrate_decay*1000 steps)
+lrate = 5e-5
+lrate_decay = 500
+N_iters = 10000
+seed = 0
+
+# Domain and grid
+domain_x = 10.0
+domain_y = 10.0
+domain_z = 1.0
+resolution_x = 64
+resolution_y = 64
+resolution_z = 16
+
+# Forward solver: implicit Euler, Jacobi inner iterations, harmonic-mean faces
+dt = 0.05
+num_steps = 100
+jacobi_iters = 50
+mean_type = harmonic
+
+# Initial condition (Gaussian post-flash profile)
+heat_source_x = 5.0
+heat_source_y = 5.0
+heat_source_z = 0.8
+heat_intensity = 100.0
+heat_radius = 0.5
+
+# Diffusivity bounds
+min_diffusivity = 0.003
+max_diffusivity = 0.25
+
+# Loss: data term on all frames (num_loss_frames >= frames) + TV regularizer
+reg_type = tv
+reg_weight = 1e-3
+num_loss_frames = 512
+no_sl = False
+
+# Logging / best-checkpoint selection
+i_print = 100
+early_stop_min_delta = 0.05
+early_stop_patience = 500
+
+# Acceleration
+use_compile = True
+use_adjoint = True

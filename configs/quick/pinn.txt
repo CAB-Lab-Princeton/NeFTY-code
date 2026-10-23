@@ -1,0 +1,70 @@
+# Quick smoke-test variant of configs/pinn.txt (20 iterations, fewer sampled points).
+# PINN, alternative recipe with fixed loss weights (no GradNorm): temperature network
+# T(x, y, z, t) + diffusivity network alpha(x, y, z), trained on surface data + IC + PDE
+# residual. Besides the fixed weights, it differs from the PINN baseline
+# (configs/pinn_gradnorm.txt) in the diffusivity-network activation (ReLU vs softplus),
+# the network inputs (raw physical coordinates vs coordinates mapped to [-1, 1]) and the
+# learning rate (1e-4 vs 5e-5).
+
+# Experiment
+expname = pinn_quick
+basedir = ./logs
+datadir = ./data/synthetic_test
+
+# Networks (both use netdepth x netwidth; tanh in T, mlp_activation in alpha)
+netdepth = 10
+netwidth = 512
+netchunk = 65536
+multires = 12
+i_embed = 0
+anneal_iters = 10
+use_fa = True
+mlp_activation = relu
+output_activation = sigmoid
+normalize_coords = False
+
+# Optimization
+lrate = 1e-4
+lrate_decay = 500
+N_iters = 20
+seed = 0
+
+# Loss weights (fixed)
+lambda_data = 100.0
+lambda_ic = 100.0
+lambda_pde = 0.01
+lambda_pde_warmup = 0
+lambda_pde_ramp = 0
+use_gradnorm = False
+
+# Points sampled per iteration: PDE collocation, initial condition, surface data
+n_pde = 2048
+n_ic = 512
+n_data = 512
+
+# Domain and grid (grid is used for evaluation only)
+domain_x = 10.0
+domain_y = 10.0
+domain_z = 1.0
+resolution_x = 64
+resolution_y = 64
+resolution_z = 16
+
+# Time axis
+dt = 0.05
+num_steps = 100
+
+# Initial condition (Gaussian post-flash profile)
+heat_source_x = 5.0
+heat_source_y = 5.0
+heat_source_z = 0.8
+heat_intensity = 100.0
+heat_radius = 0.5
+
+# Diffusivity bounds
+min_diffusivity = 0.003
+max_diffusivity = 0.25
+
+# Logging
+i_print = 5
+use_compile = False

@@ -1,0 +1,20 @@
+# Sound-Only U-Net: supervised 3D U-Net trained only on defect-free samples
+# (generate them with `python -m dataset.generate_defect_free`).
+# Evaluate on the defect benchmark with evaluate_unet.py / evaluate_unet_batch.py.
+
+expname = unet_sound_only
+basedir = ./logs
+datadir = ./data/synthetic_1000_nodefect
+
+# Training (Adam; StepLR halves the lr every lrate_decay epochs)
+batch_size = 16
+lrate = 1e-3
+lrate_decay = 100
+epochs = 500
+seed = 0
+
+# Output range of the scaled sigmoid
+min_diffusivity = 0.003
+max_diffusivity = 0.25
+
+i_print = 10

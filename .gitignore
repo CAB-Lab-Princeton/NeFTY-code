@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Run outputs
+logs/
+outputs/
+output*/
+*.log
+wandb/
+
+# Checkpoints and tensors
+*.tar
+*.pt
+*.pth
+*.ckpt
+
+# Data: only the bundled mini dataset is tracked
+data/*
+!data/synthetic_test/
+data/synthetic_test/*
+!data/synthetic_test/dataset.pt
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Downloaded checkpoints
+checkpoints/

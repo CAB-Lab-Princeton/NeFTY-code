@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "NeFTY: Neural Field Thermal Tomography"
+type: software
+license:
+  - MIT
+  - GPL-3.0-only
+repository-code: "https://github.com/CAB-Lab-Princeton/NeFTY-code"
+authors:
+  - family-names: Zhong
+    given-names: Tao
+    affiliation: Princeton University
+  - family-names: Hu
+    given-names: Yixun
+    affiliation: Princeton University
+  - family-names: Zheng
+    given-names: Dongzhe
+    affiliation: Princeton University
+  - family-names: Sood
+    given-names: Aditya
+    affiliation: Princeton University
+  - family-names: Allen-Blanchette
+    given-names: Christine
+    affiliation: Princeton University
+identifiers:
+  - type: other
+    value: "arXiv:2603.11045"
+    description: arXiv preprint
+preferred-citation:
+  type: conference-paper
+  title: "Neural Field Thermal Tomography: A Differentiable Physics Framework for Non-Destructive Evaluation"
+  authors:
+    - family-names: Zhong
+      given-names: Tao
+      affiliation: Princeton University
+    - family-names: Hu
+      given-names: Yixun
+      affiliation: Princeton University
+    - family-names: Zheng
+      given-names: Dongzhe
+      affiliation: Princeton University
+    - family-names: Sood
+      given-names: Aditya
+      affiliation: Princeton University
+    - family-names: Allen-Blanchette
+      given-names: Christine
+      affiliation: Princeton University
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS)"
+  conference:
+    name: "The Fortieth Annual Conference on Neural Information Processing Systems (NeurIPS 2026)"
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2603.11045"
+  url: "https://arxiv.org/abs/2603.11045"

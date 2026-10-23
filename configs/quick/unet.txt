@@ -1,0 +1,22 @@
+# Quick smoke-test variant of configs/unet_sound_only.txt (2 epochs). Point datadir at a
+# defect-free dataset for the Sound-Only setting.
+# Sound-Only U-Net: supervised 3D U-Net trained only on defect-free samples
+# (generate them with `python -m dataset.generate_defect_free`).
+# Evaluate on the defect benchmark with evaluate_unet.py / evaluate_unet_batch.py.
+
+expname = unet_quick
+basedir = ./logs
+datadir = ./data/synthetic_test
+
+# Training (Adam; StepLR halves the lr every lrate_decay epochs)
+batch_size = 2
+lrate = 1e-3
+lrate_decay = 100
+epochs = 2
+seed = 0
+
+# Output range of the scaled sigmoid
+min_diffusivity = 0.003
+max_diffusivity = 0.25
+
+i_print = 1
