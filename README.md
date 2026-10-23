@@ -4,7 +4,7 @@
 
 ### A Differentiable Physics Framework for Non-Destructive Evaluation
 
-[Tao Zhong](https://www.taozhong.info/), [Yixun Hu](https://yixun-hu.github.io/), [Dongzhe Zheng](https://scholar.google.com/citations?user=Szg1nBQAAAAJ&hl=en), [Aditya Sood](https://sites.google.com/view/adityasood/members?authuser=0#h.kqvdn7sywamh), [Christine Allen-Blanchette](https://cablanc.github.io/)
+[Tao Zhong](https://www.taozhong.info/), [Yixun Hu](https://yixun-hu.github.io/), [Dongzhe Zheng](https://denzelzheng.com/), [Aditya Sood](https://sites.google.com/view/adityasood/members?authuser=0#h.kqvdn7sywamh), [Christine Allen-Blanchette](https://cablab.scholar.princeton.edu/people)
 
 Princeton University
 
